@@ -13,9 +13,10 @@ namespace Greece.Services
     {
         private HttpClient httpClient;
         private ObservableCollection<Carta> cartas;
+        private Carta carta;
         private JsonSerializerOptions jsonSerializerOptions; // configurar/formatar o JSON
         Uri uri = new Uri("https://localhost8080/cartas");
-
+    
         public CartaService()
         {
             httpClient = new HttpClient();
@@ -45,5 +46,28 @@ namespace Greece.Services
             }
             return cartas;
         }
+
+
+
+        public async Task<Carta> GetCartaByIdAsync(int id) // TASK: usado no await
+        {
+
+            try
+            {
+                HttpResponseMessage response = await httpClient.GetAsync($"{uri}/{id}");//quero saber todos os posts;
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();// tranforma o conteudo em string;
+                    carta = JsonSerializer.Deserialize<Carta>(content, jsonSerializerOptions);
+                }
+            }
+            catch
+            {
+
+            }
+            return carta;
+        }
+
+
     }
 }

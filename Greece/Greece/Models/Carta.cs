@@ -9,9 +9,8 @@ namespace Greece.Models
     public class Carta
     {
         public int name{ get; set; }
-        public int image { get; set; }
-        public int description { get; set; }
-
+        public string image { get; set; }
+        public string description { get; set; }
         public int option { get; set; }
 
     }

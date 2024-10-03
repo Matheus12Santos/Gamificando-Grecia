@@ -14,13 +14,21 @@ namespace Greece.ViewModels
     internal partial class CartaViewModel:ObservableObject
     {
         [ObservableProperty]
-        ObservableCollection<Carta> cartas; //substituir listas em observal collection
+        Carta carta; //substituir listas em observal collection
+
+        [ObservableProperty]
+        string texto;
+
+        [ObservableProperty]
+        string image;
+
         CartaService cartaService;
+        
         public ICommand getCartasCommand { get; }//nao tem set
 
         public CartaViewModel()
         {
-            getCartasCommand = new Command(getPostagens);
+            getCartasCommand = new Command(getCarta);
             cartaService = new CartaService();//instanciando o post service
 
         }
@@ -28,10 +36,11 @@ namespace Greece.ViewModels
 
 
 
-        public async void getPostagens()
+        public async void getCarta()
         {
 
-            Cartas = await cartaService.GetCartasAsync();// chamando o metodo assincrono do service
+            Carta = await cartaService.GetCartaAsync();// chamando o metodo assincrono do service
+            texto = Carta.image;
         }
     }
 }
