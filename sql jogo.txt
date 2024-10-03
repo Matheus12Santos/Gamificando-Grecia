@@ -1,0 +1,20 @@
+CREATE DATABASE GreciaGames;
+USE GreciaGames;
+
+
+
+CREATE TABLE Cartas(
+    cartasId INT NOT NULL IDENTITY,
+    texto varchar(200) NOT NULL,
+    estatisticas INT NOT NULL, 
+    PRIMARY KEY(cartasId),
+	medidoresId INT NOT NULL,
+    FOREIGN KEY(medidoresId) REFERENCES medidores(medidoresId)
+);
+
+CREATE TABLE Medidores(
+    medidoresId INT NOT NULL IDENTITY,
+    estatisticas INT NOT NULL, 
+    PRIMARY KEY(medidoresId)
+);
+
