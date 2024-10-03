@@ -17,9 +17,6 @@ public class Cartas {
     @Column(name = "texto")
     private String texto;
 
-    @Column(name = "estatisticas")
-    private int estatisticas;
-
     @ManyToOne
     @JoinColumn(name = "medidoresId")
     private Medidores medidoresId;

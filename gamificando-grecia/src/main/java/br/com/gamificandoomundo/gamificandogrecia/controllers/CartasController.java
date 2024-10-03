@@ -4,7 +4,6 @@ import br.com.gamificandoomundo.gamificandogrecia.entitys.Cartas;
 import br.com.gamificandoomundo.gamificandogrecia.services.CartasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

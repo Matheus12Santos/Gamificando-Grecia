@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Greece.Models
 {
-    internal class Carta
+    public class Carta
     {
         public int name{ get; set; }
         public int image { get; set; }
