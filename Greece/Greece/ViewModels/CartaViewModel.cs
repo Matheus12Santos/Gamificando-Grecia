@@ -14,6 +14,9 @@ namespace Greece.ViewModels
     internal partial class CartaViewModel:ObservableObject
     {
         [ObservableProperty]
+        int id;
+
+        [ObservableProperty]
         Carta carta; //substituir listas em observal collection
 
         [ObservableProperty]
@@ -39,8 +42,8 @@ namespace Greece.ViewModels
         public async void getCarta()
         {
 
-            Carta = await cartaService.GetCartaAsync();// chamando o metodo assincrono do service
-            texto = Carta.image;
+            Carta = await cartaService.GetCartaByIdAsync(id);// chamando o metodo assincrono do service
+            image = Carta.image;
         }
     }
 }

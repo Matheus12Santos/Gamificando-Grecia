@@ -1,15 +1,15 @@
-CREATE DATABASE GreciaGames;
-USE GreciaGames;
-
+CREATE DATABASE GreciaGames3;
+USE GreciaGames3;
+drop database GreciaGames;
+use model
 
 
 CREATE TABLE Cartas(
     cartasId INT NOT NULL IDENTITY,
     texto varchar(200) NOT NULL,
-    estatisticas INT NOT NULL, 
     PRIMARY KEY(cartasId),
 	medidoresId INT NOT NULL,
-    FOREIGN KEY(medidoresId) REFERENCES medidores(medidoresId)
+    FOREIGN KEY(medidoresId) REFERENCES Medidores(medidoresId)
 );
 
 CREATE TABLE Medidores(
@@ -18,3 +18,13 @@ CREATE TABLE Medidores(
     PRIMARY KEY(medidoresId)
 );
 
+insert into Cartas values('Escalar e alcançar o terreno elevado para armar uma emboscada',3)
+insert into Cartas values('Dar a volta pelo caminho mais longo',2)
+insert into Cartas values('Usar madeiras para improvisar uma jangada e atravessar',3)
+insert into Cartas values('Esperar a água se acalmar para atravessar calmamente',1)
+insert into Cartas values('Abriguemo-nos até a tempestade passar',2)
+insert into Cartas values('Economizar tempo prosseguindo na tempestade',1)
+
+insert into Medidores values(100)
+insert into Medidores values(100)
+insert into Medidores values(100)

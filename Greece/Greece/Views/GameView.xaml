@@ -1,53 +1,79 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Greece.Views.GameView"
-             Title="GameView">
+             x:Class="Greece.Views.GameView">
     <VerticalStackLayout
          Padding="30,0"
          Spacing="25"
-         Background="LightGray">
-        
+         Background="Gray"
+         >
 
 
 
 
-        <Grid BackgroundColor="Beige" >
+
+        <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" >
             <Image
          Source="dinheiro.webp"
          HeightRequest="50"
-         Margin="0,0,120,0"
+         Margin="0,0,120,20"
          />
-            <Label Text="100"/>
+            <Label Text="100"
+                   Margin="120,60,0,0"/>
             <Image
-       Source="cruz.webp"
-         HeightRequest="50"
-         Margin="100,0,0,0"
-     />
-            <Label Text="100"  />
+                Source="cruz.webp"
+                HeightRequest="50"
+                Margin="110,0,10,0"
+            />
+            <Label 
+                Text="100"
+                Margin="230,70,0,0"
+                   
+                />
 
 
             <Image
          Source="castelo.png"
          HeightRequest="50"
-         Margin="250,0,0,0"
+         Margin="340,0,0,0"
      />
-            <Label Text="100"/>
+            <Label Text="100"
+                   Margin="350,75,0,0"/>
         </Grid>
 
 
-        <Grid Background="Gray" WidthRequest="220">
+        <Grid Background="#f5b230" WidthRequest="220" >
+            
             <Label
-         Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"
-         />
+             HorizontalTextAlignment="Center"
+             Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"
+             TextColor="Black"
+            />
             <Image
-         Margin="30"
-         Source="reigns_character_exemplo.png"
-         HeightRequest="150"
-        
-     />
+             Source="reigns_character_exemplo.png"
+             HeightRequest="220"
+             Margin="0,70,0,0"
+            />
+
+            <Label
+            Background="Black"
+            Margin="0,280,0,0"    
+            HorizontalTextAlignment="Center"
+            Text="Princesa Leya"
+            TextColor="White"
+            />  
 
         </Grid>
+
+        <Button
+            Text="-->"
+            BackgroundColor="Blue"
+            Margin="0,1000,0,0"
+            />
+        <Button
+            Text="<--"
+            BackgroundColor="Blue"
+            />
 
 
     </VerticalStackLayout>
