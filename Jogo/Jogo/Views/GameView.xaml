@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Greece.Views.GameView">
-    <VerticalStackLayout
-         Padding="30,0"
-         Spacing="25"
-         Background="Gray"
-         >
-
-
-
-
-
+             x:Class="Jogo.Views.GameView"
+             Title="GameView"
+             BackgroundImageSource="room1.png">
+    <VerticalStackLayout>
+    
         <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" >
             <Image
          Source="dinheiro.webp"
@@ -43,14 +37,14 @@
 
 
         <Grid Background="#f5b230" WidthRequest="220" >
-            
+
             <Label
              HorizontalTextAlignment="Center"
              Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"
              TextColor="Black"
             />
             <Image
-             Source="reigns_character_exemplo.png"
+             Source="{Binding Image}"
              HeightRequest="220"
              Margin="0,70,0,0"
             />
@@ -61,19 +55,30 @@
             HorizontalTextAlignment="Center"
             Text="Princesa Leya"
             TextColor="White"
-            />  
+            />
+
+
+
+           
 
         </Grid>
-
-        <Button
+        <Grid>
+                <Button
+         ImageSource="right_button.png"
+         HeightRequest="150"
+         Margin="200,0,0,0"
+         WidthRequest="200"
+         BorderWidth="0"
             
-            BackgroundColor="Blue"
-            Margin="0,1000,0,0"
-            />
-        <Button
-            
-            BackgroundColor="Blue"
-            />
+         />
+            <Button
+         ImageSource="left_button.png"
+         HeightRequest="150"
+         Margin="100,0,400,0"
+         WidthRequest="200"
+         BorderWidth="0"
+         />
+        </Grid>
 
 
     </VerticalStackLayout>
