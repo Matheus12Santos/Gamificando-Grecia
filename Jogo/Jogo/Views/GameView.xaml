@@ -2,25 +2,25 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jogo.Views.GameView"
-             BackgroundImageSource="room1.png">
+             BackgroundImageSource="fundo.jpg">
     <VerticalStackLayout>
 
-        <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" >
+        <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" Margin="0,40,0,0" >
             <Image
              Source="dinheiro.webp"
              HeightRequest="50"
-             Margin="0,0,120,20"
+             Margin="0,0,230,20"
             />
             <Label Text="100"
                    Margin="120,60,0,0"/>
             <Image
                 Source="cruz.webp"
                 HeightRequest="50"
-                Margin="110,0,10,0"
+                Margin="40,0,10,10"
             />
             <Label 
                 Text="100"
-                Margin="230,70,0,0"
+                Margin="250,70,0,0"
                    
                 />
 
@@ -28,20 +28,34 @@
             <Image
              Source="castelo.png"
              HeightRequest="50"
-             Margin="340,0,0,0"
+             Margin="280,0,0,0"
             />
-            <Label Text="100"
-                   Margin="350,75,0,0"/>
+            
+            <Label 
+                Text="100"
+                Margin="375,75,0,0"
+             />
         </Grid>
 
-
-        <Grid Background="#f5b230" WidthRequest="220" >
-
-            <Label
-             HorizontalTextAlignment="Center"
-             Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"
-             TextColor="Black"
-            />
+        <Grid>
+            <ImageButton
+          Source="right_button.png"
+          HeightRequest="100"
+          Margin="360,100,0,00"
+          WidthRequest="100"
+          BorderWidth="0"
+ 
+         />
+        <Grid Background="#f5b230" WidthRequest="220" Margin="0,80,0,0" >
+               
+                  <Label 
+                     Margin="0,10,0,0"
+                     HorizontalTextAlignment="Center"
+                     Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"
+                     
+                     
+                  />
+          
             <Image
              Source="reigns_character_exemplo.png"
              HeightRequest="220"
@@ -61,24 +75,15 @@
            
 
         </Grid>
-        <Grid>
-           <Button
-             ImageSource="right_button.png"
-             HeightRequest="100"
-             Margin="200,0,0,0"
-             WidthRequest="100"
-             BorderWidth="0"
-            
-            />
-            
-            <Button
-             ImageSource="left_button.png"
-             HeightRequest="100"
-             Margin="100,0,400,0"
-             WidthRequest="100"
-             BorderWidth="0"
-            />
+            <ImageButton
+                 Source="left_button.png"
+                 HeightRequest="100"
+                 Margin="40,100,400,0"
+                 WidthRequest="100"
+                 BorderWidth="0"
+             />
         </Grid>
+      
 
         
 
