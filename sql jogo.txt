@@ -1,8 +1,13 @@
-CREATE DATABASE GreciaGames3;
-USE GreciaGames3;
-drop database GreciaGames;
+CREATE DATABASE GreciaGames4;
+USE GreciaGames4;
 use model
 
+
+CREATE TABLE Medidores(
+    medidoresId INT NOT NULL IDENTITY,
+    estatisticas INT NOT NULL, 
+    PRIMARY KEY(medidoresId)
+);
 
 CREATE TABLE Cartas(
     cartasId INT NOT NULL IDENTITY,
@@ -12,11 +17,15 @@ CREATE TABLE Cartas(
     FOREIGN KEY(medidoresId) REFERENCES Medidores(medidoresId)
 );
 
-CREATE TABLE Medidores(
-    medidoresId INT NOT NULL IDENTITY,
-    estatisticas INT NOT NULL, 
-    PRIMARY KEY(medidoresId)
+
+Create table Personagem(
+	personagemId int Primary key not null identity,
+	nome varchar(40) not null
 );
+
+drop table Medidores
+drop table Persongem
+drop table Cartas
 
 insert into Cartas values('Escalar e alcançar o terreno elevado para armar uma emboscada',3)
 insert into Cartas values('Dar a volta pelo caminho mais longo',2)
@@ -28,3 +37,7 @@ insert into Cartas values('Economizar tempo prosseguindo na tempestade',1)
 insert into Medidores values(100)
 insert into Medidores values(100)
 insert into Medidores values(100)
+
+insert into Personagem values('Princesa Leya');
+insert into Personagem values('Guerreira Mary');
+insert into Personagem values ('Lorde Kraven');

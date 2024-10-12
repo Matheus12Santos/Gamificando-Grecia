@@ -39,13 +39,13 @@
 
         <Grid>
             <ImageButton
-          Source="right_button.png"
-          HeightRequest="100"
-          Margin="360,100,0,00"
-          WidthRequest="100"
-          BorderWidth="0"
- 
-         />
+             Command="{Binding trocarCartaCommand}"
+              Source="right_button.png"
+              HeightRequest="100"
+              Margin="360,100,0,00"
+              WidthRequest="100"
+              BorderWidth="0"
+            />
         <Grid Background="#f5b230" WidthRequest="220" Margin="0,80,0,0" >
                
                   <Label 
@@ -57,7 +57,7 @@
                   />
           
             <Image
-             Source="reigns_character_exemplo.png"
+             Source="{Binding Image}"
              HeightRequest="220"
              Margin="0,70,0,0"
             />
@@ -76,6 +76,7 @@
 
         </Grid>
             <ImageButton
+                 Command="{Binding trocarCartaCommand}"
                  Source="left_button.png"
                  HeightRequest="100"
                  Margin="40,100,400,0"
