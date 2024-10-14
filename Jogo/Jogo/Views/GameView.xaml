@@ -12,32 +12,32 @@
                 Margin="0,0,230,20"/>
             
             <Label 
-                Text="100"
+                Text="{Binding EstatisMantimentos}"
                 Margin="120,60,0,0"/>
             
             <Image
-                Source="cruz.webp"
+                Source="medidor_exercito.png"
                 HeightRequest="50"
                 Margin="40,0,10,10"/>
             
             <Label 
-                Text="100"
+                Text="{Binding EstatisExercito}"
                 Margin="250,70,0,0"/>
             
             <Image
-                Source="castelo.png"
-                HeightRequest="50"
-                Margin="280,0,0,0"/>
+                Source="medidor_confianca.png"
+                HeightRequest="60"
+                Margin="280,0,0,10"/>
             
             <Label 
-                Text="100"
-                Margin="375,75,0,0"/>
+                Text="{Binding EstatisConfianca}"
+                Margin="375,70,0,0"/>
         </Grid>
 
         <Grid>
             <ImageButton
-                x:Name="opcao2"
-                Command="{Binding TrocarCartaCommand}"
+                x:Name="opcao1"
+                Command="{Binding Opcao2}"
                 Source="option_button.png"
                 HeightRequest="100"
                 Margin="360,100,0,00"
@@ -68,7 +68,8 @@
             </Grid>
             
             <ImageButton
-                 Command="{Binding TrocarCartaCommand}"
+                 x:Name="opcao2"
+                 Command="{Binding Opcao1}"
                  Source="option_button.png"
                  HeightRequest="100"
                  Margin="40,100,400,0"
@@ -76,6 +77,27 @@
                  BorderWidth="0"
                  BackgroundColor="Transparent"
              />
+
+          
         </Grid>
+
+        <Grid>
+            <Label
+                Text="DIAS ATÉ A GUERRA:"
+                TextColor="White"
+                Margin="300,0,0,0"
+                
+               
+                />
+            
+
+            <Label
+             Text="{Binding DiasGuerra}"
+             TextColor="White"
+             Margin="440,0,0,0"
+             />
+
+        </Grid>
+        
     </VerticalStackLayout>
 </ContentPage>

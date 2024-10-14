@@ -8,11 +8,11 @@ namespace Jogo.Models
 {
     internal class Medidor
     {
-        public int Percentage { get; set; }
-        public string Image { get; set; }
-        public int Name { get; set; }
-        public int MaxValue { get; set; }
+        public int MedidorId { get; set; }
+        public int EstatisMantimentos { get; set; }
+        public int EstatisExercito { get; set; }
+        public int EstatisConfiaca { get; set; }
         public int MinValue { get; set; }
-        public int ActualValue { get; set; }
+        
     }
 }
