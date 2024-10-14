@@ -7,14 +7,24 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "Medidores" )
+@Table(name = "Medidores")
 public class Medidores {
 
     @Id
-    @Column(name = "medidoresId")
-    private int medidoresId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MedidorId")
+    private int medidorId;
 
-    @Column(name = "estatisticas")
-    private int estatisticas;
+    @OneToMany
+    @JoinColumn(name = "PersonId")
+    private Personagens personId;
 
+    @Column(name = "EstatisMantimentos")
+    private int estatisMantimentos;
+
+    @Column(name = "EstatisExercito")
+    private int estatisExercito;
+
+    @Column(name = "EstatisConfianca")
+    private int estatisConfianca;
 }

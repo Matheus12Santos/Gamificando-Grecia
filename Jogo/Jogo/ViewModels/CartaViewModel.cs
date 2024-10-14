@@ -1,67 +1,69 @@
 ﻿using Jogo.Models;
-using System;
-using System.Collections.Generic;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Jogo.Services;
 
 namespace Jogo.ViewModels
 {
-    internal partial class CartaViewModel:ObservableObject
+    internal partial class CartaViewModel : ObservableObject
     {
         [ObservableProperty]
-        int id = 0;
+        private int id = 0;
 
         [ObservableProperty]
-        Carta carta; 
+        private Carta carta;
 
         [ObservableProperty]
-        string texto;
+        private string texto;
 
         [ObservableProperty]
-        string image = "image1.png";
+        private string image = "image1.png";
+
+        [ObservableProperty]
+        private string name = "Princesa Leiya";
 
         CartaService cartaService;
 
-        public ICommand getCartaCommand { get; }
-        public ICommand trocarCartaCommand { get; }
+        public ICommand GetCartaCommand { get; }
+        public ICommand TrocarCartaCommand { get; }
 
         public CartaViewModel()
         {
-            getCartaCommand = new Command(getCarta);
-            trocarCartaCommand = new Command(trocarCarta);
+            GetCartaCommand = new Command(GetCarta);
+            TrocarCartaCommand = new Command(TrocarCarta);
             cartaService = new CartaService();
-
         }
 
-
-
-       
-        public async void getCarta()
+        public async void GetCarta()
         {   
-            Carta = await cartaService.GetCartaByIdAsync(id);
-            image = "reigns_character_exemplo.png";
-            id = id + 1;
+            Carta = await cartaService.GetCartaByIdAsync(Id);
+            Image = "reigns_character_exemplo.png";
+            Id += 1;
         }
 
-        public async void trocarCarta()
-        {
-           
-            Id = id + 1;
-           if (id <= 3) {
-                Image = "image" + id + ".png";
+        public void TrocarCarta()
+        {           
+            Id += 1;
+            // Essa parte ainda será mudada;
+            if (Id <= 3) {
+                Image = "image" + Id + ".png";
+                if (Image == "image1.png")
+                {
+                    Name = "Princesa Leiya";
+                }
+                if (Image == "image2.png")
+                {
+                    Name = "Guerreira Mary";
+                }
+                if (Image == "image3.png")
+                {
+                    Name = "Lorde Kraven";
+                }
             }
             else
             {
                 Id = 0;
-            }
-           
-            
+            }                           
         }
-
-
     }
 }

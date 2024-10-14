@@ -1,6 +1,5 @@
 package br.com.gamificandoomundo.gamificandogrecia.services;
 
-import br.com.gamificandoomundo.gamificandogrecia.entitys.Cartas;
 import br.com.gamificandoomundo.gamificandogrecia.entitys.Medidores;
 import br.com.gamificandoomundo.gamificandogrecia.repositorys.MedidoresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
