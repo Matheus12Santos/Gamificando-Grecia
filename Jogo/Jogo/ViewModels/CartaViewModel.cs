@@ -2,25 +2,32 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
 using Jogo.Services;
+using System.Runtime.Intrinsics.X86;
 
 namespace Jogo.ViewModels
 {
     internal partial class CartaViewModel : ObservableObject
     {
         [ObservableProperty]
-        private int id = 0;
+        private int id=1;
 
         [ObservableProperty]
         private Carta carta;
 
         [ObservableProperty]
-        private string texto;
+        private string texto = "General, uma tempestade se aproxima, deveriamos esperar ela passar?";
 
         [ObservableProperty]
         private string image = "image1.png";
 
         [ObservableProperty]
-        private string name = "Princesa Leiya";
+        private string name = "Eryx";
+
+        [ObservableProperty]
+        private string textoHover; // Texto exibido ao passar o mouse sobre o botão
+
+        [ObservableProperty]
+        private bool isHovering;  // Controle de exibição do texto
 
         CartaService cartaService;
 
@@ -29,41 +36,39 @@ namespace Jogo.ViewModels
 
         public CartaViewModel()
         {
-            GetCartaCommand = new Command(GetCarta);
+           
             TrocarCartaCommand = new Command(TrocarCarta);
             cartaService = new CartaService();
         }
 
-        public async void GetCarta()
-        {   
-            Carta = await cartaService.GetCartaByIdAsync(Id);
-            Image = "reigns_character_exemplo.png";
-            Id += 1;
-        }
 
-        public void TrocarCarta()
-        {           
+       
+        public async void TrocarCarta()
+        {
             Id += 1;
-            // Essa parte ainda será mudada;
+           
             if (Id <= 3) {
                 Image = "image" + Id + ".png";
-                if (Image == "image1.png")
-                {
-                    Name = "Princesa Leiya";
-                }
-                if (Image == "image2.png")
-                {
-                    Name = "Guerreira Mary";
-                }
-                if (Image == "image3.png")
-                {
-                    Name = "Lorde Kraven";
-                }
+                Carta = await cartaService.GetCartaByIdAsync(Id);
+                Name = Carta.personName;
+                Texto = Carta.personTexto;
+               
+
+
             }
             else
             {
-                Id = 0;
-            }                           
+                Id = 1;
+                Image = "image" + Id + ".png";
+                Name = "Eryx";
+                Texto = "General, uma tempestade se aproxima, deveriamos esperar ela passar ?";
+                
+            }     
+            
         }
+
+
+        
+
     }
 }

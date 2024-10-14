@@ -36,28 +36,32 @@
 
         <Grid>
             <ImageButton
+                x:Name="opcao2"
                 Command="{Binding TrocarCartaCommand}"
                 Source="option_button.png"
                 HeightRequest="100"
                 Margin="360,100,0,00"
                 WidthRequest="100"
                 BorderWidth="0"
-                Rotation="180"/>
+                Rotation="180"
+                BackgroundColor="Transparent"
+                
+                />
             
-            <Grid Background="#f5b230" WidthRequest="220" Margin="0,80,0,0" >
+            <Grid Background="#f5b230" WidthRequest="260" Margin="0,80,0,0" HeightRequest="380">
                 <Label 
                      Margin="0,10,0,0"
                      HorizontalTextAlignment="Center"
-                     Text="PRECISAMOS DE DINHEIRO PARA REFORMAR O CASTELO"/>
+                     Text="{Binding Texto}"/>
 
                 <Image
                     Source="{Binding Image}"
-                    HeightRequest="220"
-                    Margin="0,70,0,0"/>
+                    HeightRequest="270"
+                    Margin="0,100,0,0"/>
 
                 <Label
                     Background="Black"
-                    Margin="0,280,0,0"    
+                    Margin="0,350,0,0"    
                     HorizontalTextAlignment="Center"
                     Text="{Binding Name}"
                     TextColor="White"/>
@@ -69,7 +73,9 @@
                  HeightRequest="100"
                  Margin="40,100,400,0"
                  WidthRequest="100"
-                 BorderWidth="0"/>
+                 BorderWidth="0"
+                 BackgroundColor="Transparent"
+             />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>

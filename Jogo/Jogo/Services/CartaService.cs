@@ -12,10 +12,9 @@ namespace Jogo.Services
     internal class CartaService
     {
         private HttpClient httpClient;
-        private ObservableCollection<Carta> cartas;
         private Carta carta;
         private JsonSerializerOptions jsonSerializerOptions; // configurar/formatar o JSON
-        Uri uri = new Uri("https://localhost8080/cartas");
+        Uri uri = new Uri("http://localhost:8080/personagens");
 
         public CartaService()
         {
@@ -28,45 +27,35 @@ namespace Jogo.Services
             };
         }
 
-        public async Task<ObservableCollection<Carta>> GetCartasAsync() // TASK: usado no await
+
+
+
+        public async Task<Carta> GetCartaByIdAsync(int id)
         {
-
-            try
-            {
-                HttpResponseMessage response = await httpClient.GetAsync(uri);//quero saber todos os posts;
-                if (response.IsSuccessStatusCode)
-                {
-                    string content = await response.Content.ReadAsStringAsync();// tranforma o conteudo em string;
-                    cartas = JsonSerializer.Deserialize<ObservableCollection<Carta>>(content, jsonSerializerOptions);
-                }
-            }
-            catch
-            {
-
-            }
-            return cartas;
-        }
-
-
-
-        public async Task<Carta> GetCartaByIdAsync(int id) // TASK: usado no await
-        {
-
             try
             {
                 HttpResponseMessage response = await httpClient.GetAsync($"{uri}/{id}");//quero saber todos os posts;
                 if (response.IsSuccessStatusCode)
                 {
-                    string content = await response.Content.ReadAsStringAsync();// tranforma o conteudo em string;
+                    string content = await response.Content.ReadAsStringAsync();
                     carta = JsonSerializer.Deserialize<Carta>(content, jsonSerializerOptions);
+                    if (carta == null)
+                    {
+                        Console.WriteLine("A deserialização retornou nulo.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Falha ao chamar a API. Código de status: {response.StatusCode}");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                Console.WriteLine($"Erro ao fazer a chamada da API: {ex.Message}");
             }
             return carta;
         }
+
 
 
     }

@@ -15,7 +15,7 @@ public class Medidores {
     @Column(name = "MedidorId")
     private int medidorId;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "PersonId")
     private Personagens personId;
 

@@ -29,8 +29,5 @@ public class MedidoresController {
         }
         //(outra maneira) return service.buscarPorId(id).map(e->ResponseEntity.ok(e)).orElse(ResponseEntity.notFound().build());
     }
-    @PostMapping
-    public Medidores cadastrar_medidores(@RequestBody  Medidores medidor){
-        return service.cadastrar_medidores(medidor);
-    }
+
 }

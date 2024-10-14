@@ -21,8 +21,6 @@ public class MedidoresService {
         return repository.findById(id);
     }
 
-    public Medidores cadastrar_medidores(Medidores medidor){
-        return repository.save(medidor);
-    }
+
 
 }

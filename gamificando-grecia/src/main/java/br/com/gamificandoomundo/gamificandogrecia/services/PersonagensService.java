@@ -13,17 +13,15 @@ public class PersonagensService {
     @Autowired
     private PersonagensRepository repository;
 
-    public List<Personagens> listar_cartas(){
+    public List<Personagens> listar_personagens(){
         return repository.findAll();
     }
 
-    public Optional<Personagens> listarCartasPorId(int id){
+    public Optional<Personagens> listarPersonagensPorId(int id){
         return repository.findById(id);
     }
 
-    public Personagens cadastrar_cartas(Personagens carta){
-        return repository.save(carta);
-    }
+
 
 
 }

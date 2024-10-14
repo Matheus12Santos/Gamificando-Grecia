@@ -9,4 +9,8 @@ public partial class GameView : ContentPage
 		InitializeComponent();
         BindingContext = new CartaViewModel();
     }
+
+   
+
+    
 }
