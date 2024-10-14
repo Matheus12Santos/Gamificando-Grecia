@@ -8,10 +8,10 @@ namespace Jogo.Models
 {
     internal class Carta
     {
-        public int id { get; set; }
-        public int name { get; set; }
-        public string image { get; set; }
-        public string description { get; set; }
-        public int option { get; set; }
+        public int Id { get; set; }
+        public int Name { get; set; }
+        public string Image { get; set; }
+        public string Description { get; set; }
+        public int Option { get; set; }
     }
 }
