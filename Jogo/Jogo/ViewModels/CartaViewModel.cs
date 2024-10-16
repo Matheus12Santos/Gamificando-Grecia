@@ -48,6 +48,9 @@ namespace Jogo.ViewModels
         [ObservableProperty]
         private int count = 0;
 
+        [ObservableProperty]
+        private bool inicioGuerra;
+
 
 
         CartaService cartaService;
@@ -58,6 +61,8 @@ namespace Jogo.ViewModels
 
         public ICommand Opcao1 { get; }
         public ICommand Opcao2 { get; }
+
+        public ICommand FecharAvisoCommand { get; }
 
         public CartaViewModel()
         {
@@ -76,6 +81,8 @@ namespace Jogo.ViewModels
                 TrocarCarta();
                 contadorDias();
             });
+
+            FecharAvisoCommand = new Command(retirarAviso);
             
         }
 
@@ -153,12 +160,16 @@ namespace Jogo.ViewModels
             DiasGuerra = DiasGuerra -  1;
             Convert.ToString(DiasGuerra);
             if (Count == 0 && DiasGuerra == 0) {
+                InicioGuerra = true;
                 Count = 1;
                 DiasGuerra = 5;
+
             }
             if(DiasGuerra == 0 && Count == 1)
             {
-                DiasGuerra = 0;
+                InicioGuerra = false;
+                DiasGuerra = 15;
+                count = 0;
                 Application.Current.MainPage.DisplayAlert("PARABÉNS", "VOCÊ SOBREVIVEU A GUERRA FINALIZOU O JOGO!", "Voltar do Começo");
                 Id = 1;
                 Image = "image" + Id + ".png";
@@ -168,6 +179,11 @@ namespace Jogo.ViewModels
 
             }
             
+        }
+
+        public void retirarAviso()
+        {
+            InicioGuerra = false;
         }
 
         
