@@ -4,8 +4,8 @@
              x:Class="Jogo.Views.GameView"
              BackgroundImageSource="fundo.png">
     <VerticalStackLayout>
-
-        <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" Margin="0,40,0,0" >
+      
+            <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" Margin="0,40,0,0" >
             <Image
                 Source="medidor_mantimento.png"
                 HeightRequest="50"
@@ -86,10 +86,17 @@
                  BorderWidth="0"
                  BackgroundColor="Transparent"
              />
+            
 
+            <BoxView
+                IsVisible="{Binding InicioGuerra}"
+                BackgroundColor="Black"
+                Opacity="0.6"
+                InputTransparent="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"/>
 
-
-            <Grid IsVisible="{Binding InicioGuerra}" HeightRequest="250" WidthRequest="500" Margin="0,100,0,0">
+            <Grid IsVisible="{Binding InicioGuerra}" HeightRequest="250" WidthRequest="500" Margin="0,100,0,0"  >
                 <Label
                      Text="A GUERRA COMEÇOU, SOBREVIVA A ELA EM 5 DIAS"
                      BackgroundColor="White"
@@ -134,6 +141,7 @@
              />
 
         </Grid>
+        
         
     </VerticalStackLayout>
 </ContentPage>

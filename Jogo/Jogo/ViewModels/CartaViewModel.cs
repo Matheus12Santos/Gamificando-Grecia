@@ -175,6 +175,9 @@ namespace Jogo.ViewModels
                 Image = "image" + Id + ".png";
                 Name = "Eryx";
                 Texto = "General, uma tempestade se aproxima, deveriamos esperar ela passar ?";
+                EstatisMantimentos = 100;
+                EstatisExercito = 100;
+                EstatisExercito = 100;
 
 
             }
