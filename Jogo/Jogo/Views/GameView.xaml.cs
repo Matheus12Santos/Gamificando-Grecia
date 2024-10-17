@@ -22,11 +22,11 @@ public partial class GameView : ContentPage
 
     private void PointerGestureRecognizer_PointerExited_1(object sender, PointerEventArgs e)
     {
-        firstOption.IsVisible = false;
+        secondOption.IsVisible = false;
     }
 
     private void PointerGestureRecognizer_PointerEntered_1(object sender, PointerEventArgs e)
     {
-        firstOption.IsVisible = true;
+        secondOption.IsVisible = true;
     }
 }

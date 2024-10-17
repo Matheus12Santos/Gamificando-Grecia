@@ -43,7 +43,7 @@
              Margin="500,0,0,0"   
             />
             <ImageButton
-                x:Name="opcao1"
+                x:Name="opcao2"
                 Command="{Binding Opcao2}"
                 Source="option_button.png"
                 HeightRequest="100"
@@ -93,7 +93,7 @@
                 TextColor="White"
                 />
             <ImageButton
-                 x:Name="opcao2"
+                 x:Name="opcao1"
                  Command="{Binding Opcao1}"
                  Source="option_button.png"
                  HeightRequest="100"
