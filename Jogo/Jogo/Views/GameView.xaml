@@ -4,8 +4,8 @@
              x:Class="Jogo.Views.GameView"
              BackgroundImageSource="fundo.png">
     <VerticalStackLayout>
-      
-            <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" Margin="0,40,0,0" >
+        <Border  Stroke="Beige"  StrokeThickness="4"  StrokeShape="RoundRectangle 0,0,40,40" Background="Beige" WidthRequest="600" >
+            <Grid BackgroundColor="Beige" HeightRequest="100" WidthRequest="500" Margin="0,40,0,0">
             <Image
                 Source="medidor_mantimento.png"
                 HeightRequest="50"
@@ -33,8 +33,15 @@
                 Text="{Binding EstatisConfianca}"
                 Margin="375,70,0,0"/>
         </Grid>
+        </Border>
 
         <Grid>
+            <Label
+            x:Name="secondOption"
+            Text="Teste teste"
+            TextColor="White"
+             Margin="500,0,0,0"   
+            />
             <ImageButton
                 x:Name="opcao1"
                 Command="{Binding Opcao2}"
@@ -46,12 +53,17 @@
                 Rotation="180"
                 BackgroundColor="Transparent"
                 
-                />
+                >
+                <ImageButton.GestureRecognizers>
+                    <PointerGestureRecognizer PointerEntered="PointerGestureRecognizer_PointerEntered_1"
+                                              PointerExited="PointerGestureRecognizer_PointerExited_1"/>
+                </ImageButton.GestureRecognizers>
+            </ImageButton>
             
-            <Grid WidthRequest="260" Margin="0,60,0,0" HeightRequest="380">
-                <Image Source="carta.png"  HeightRequest="500" Margin="0,50,0,0" />
+            <Grid WidthRequest="260" Margin="0,70,0,0" HeightRequest="380">
+                <Image Source="{Binding CartaImage}"  HeightRequest="500" Margin="0,50,0,0" />
                 <Label 
-                     Margin="0,15,0,240"
+                     Margin="0,50,0,240"
                      HorizontalTextAlignment="Center"
                      Text="{Binding Texto}"
                      HeightRequest="60"
@@ -61,8 +73,8 @@
 
                 <Image
                     Source="{Binding Image}"
-                    HeightRequest="300"
-                    Margin="0,105,0,0"/>
+                    HeightRequest="400"
+                    Margin="0,110,0,0"/>
 
 
             </Grid>
@@ -70,12 +82,16 @@
 
             <Label
              HeightRequest="20"
-             Margin="0,480,10,0"    
+             Margin="0,500,10,0"    
              HorizontalTextAlignment="Center"
              Text="{Binding Name}"
-             TextColor="White"/>    
+             TextColor="White"/>
 
-
+            <Label
+                x:Name="firstOption"
+                Text="Teste teste"
+                TextColor="White"
+                />
             <ImageButton
                  x:Name="opcao2"
                  Command="{Binding Opcao1}"
@@ -85,8 +101,16 @@
                  WidthRequest="100"
                  BorderWidth="0"
                  BackgroundColor="Transparent"
-             />
-            
+                
+                >
+              
+                <ImageButton.GestureRecognizers>
+                    <PointerGestureRecognizer PointerEntered="PointerGestureRecognizer_PointerEntered"
+                                              PointerExited="PointerGestureRecognizer_PointerExited"/>
+                </ImageButton.GestureRecognizers>
+            </ImageButton>
+           
+
 
             <BoxView
                 IsVisible="{Binding InicioGuerra}"

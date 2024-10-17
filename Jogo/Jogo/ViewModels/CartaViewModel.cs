@@ -18,6 +18,9 @@ namespace Jogo.ViewModels
         private Medidor medidor;
 
         [ObservableProperty]
+        private string cartaImage = "carta.png";
+
+        [ObservableProperty]
         private string texto = "General, uma tempestade se aproxima, deveriamos esperar ela passar?";
 
         [ObservableProperty]
@@ -132,13 +135,23 @@ namespace Jogo.ViewModels
         public async void TrocarCarta()
         {
             Id += 1;
-           
+
+            
+
             if (Id <= 3) {
                 Image = "image" + Id + ".png";
                 Carta = await cartaService.GetCartaByIdAsync(Id);
                 Name = Carta.personName;
                 Texto = Carta.personTexto;
-               
+                if (Id == 2)
+                {
+                    CartaImage = "fundo2.png";
+                }
+                else
+                {
+                    Image = "";
+                    CartaImage = "carta.png";
+                }
 
 
             }
